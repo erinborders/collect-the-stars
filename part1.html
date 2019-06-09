@@ -39,6 +39,7 @@
     var scoreText;
     var bombs;
     var gameOver = false;
+    var gameOverText;
 
     var game = new Phaser.Game(config);
 
@@ -90,8 +91,6 @@
 
         cursors = this.input.keyboard.createCursorKeys();
         
-     
-
         stars = this.physics.add.group({
             key: 'star',
             repeat: 11,
@@ -167,8 +166,11 @@
         player.setTint(0xff0000);
         player.anims.play('turn');
         gameOver = true;
+        gameOverText = this.add.text(200, 250, 'GAME OVER', {fontSize: '60px', fill: '#f00'});
+        
     }
 
+    
 </script>
 
 </body>
